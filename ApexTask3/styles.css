@@ -1,0 +1,28 @@
+body.responsive-body {
+  font-family: 'Roboto', sans-serif;
+  padding: 40px;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  body.responsive-body {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body.responsive-body {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  h1 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #f0f8ff;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0b7dda;
+    }
+    img {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <img src="images/funny.avif" alt="Funny Emoji">
+  <h2>Random Joke</h2>
+  <button onclick="getJoke()">Get Joke</button>
+  <p id="joke"></p>
+  <script>
+    async function getJoke() {
+      const res = await fetch('https://official-joke-api.appspot.com/random_joke');
+      const data = await res.json();
+      document.getElementById('joke').textContent = `${data.setup} - ${data.punchline}`;
+    }
+  </script>
+</body>
+</html>
